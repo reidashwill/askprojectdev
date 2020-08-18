@@ -8,13 +8,6 @@ _Cross-platform mobile app_
 ## Specs / Screen Shots
 
 ## Installation/Setup Instructions
-To run this project, you will:
-  * Install Expo CLI and a mobile simulator/emulator
-  * Clone the repository: `git clone https://github.com/fractalscape13/AskApp`
-  * In the root project directory, run `npm install` to install all dependencies 
-  * In the root project directory, add a file called "firebase.js" with Firebase credentials
-  * In the root project directory, run `npm start` 
-  * Open the project with Expo in your mobile simulator/emulator or on your device
 
 ## Technologies Used
 * React Native
