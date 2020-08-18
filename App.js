@@ -1,13 +1,15 @@
 import React, { useState, useMemo, createContext } from 'react';
-import SignInScreen from "./screens/auth/SignInScreen";
+import SignUpScreen from "./screens/auth/SignUpScreen";
+import * as firebase from 'firebase';
 
 
 
 
-export default function App() {
+export default () => {
+  const auth = firebase.auth();
   return (
     <>
-    <SignInScreen />
+    <SignUpScreen/>
     </>
   );
 }
