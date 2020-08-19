@@ -5,11 +5,22 @@ import firebase from './firebase';
 
 
 
+
+export const AuthContext = createContext();
+
 export default () => {
-  const auth = firebase.auth();
+
+  const authContext = useMemo(() => {
+  return {
+    updateUser: () => {
+      const user = firebase.auth().currentUser;
+    }
+  };
+}, []);
+
   return (
-    <>
-    <SignUpScreen/>
-    </>
+    <AuthContext.Provider value={authContext}>
+      <SignUpScreen/>
+    </AuthContext.Provider>
   );
 }

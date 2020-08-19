@@ -9,16 +9,11 @@ import {
   Alert,
   Dimensions,
 } from "react-native";
-// import {AuthContext } from '../../App';
-import firebase from '../../firebase';
+// import firebase from '../../firebase';
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-
-// function SignUpScreen(){
-
-//     const signUp = firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error){
-//       const errorCode = error.code;
-//       const errorMessage = error.message;
-//     });
+import * as firebase from "firebase";
+import { AuthContext } from "../../App";
+const windowHeight = Dimensions.get('window').height;
 
 function SignUpScreen() {
   const [email, setEmail] = useState(null);
@@ -49,20 +44,43 @@ function SignUpScreen() {
     style={{
       flex: 1,
     }}>
-      <View>
+      <View style={styles.view}>
         <TextInput
           placeholder="Email"
           value={email}
           onChangeText={setEmail}
-          autoCapitalize={'none'}/>
+          autoCapitalize={'none'} style={styles.input}/>
         <TextInput
           placeholder="Password"
           value={password}
-          onChangetext={setPassword}/>
+          onChangeText={setPassword}
+          autoCapitalize={'none'} style={styles.input}/>
         <Button title="Sign up" onPress={signUp}/>  
       </View>
     </KeyboardAwareScrollView>
   )
 }
+
+const styles = StyleSheet.create({
+  input: {
+    backgroundColor: "white",
+    height: 40,
+    borderColor: "#DDE2E4",
+    borderWidth: 2,
+    margin: 13,
+    width: 200,
+    alignItems: "center",
+    textAlign: "center",
+    color: "black",
+    fontSize: 15,
+  },
+  view: {
+    padding: 50,
+    alignItems: "center",
+    backgroundColor: "rgba(16,16,16,0.4)",
+    width: "100%",
+    height: windowHeight,
+  }
+})
 
 export default SignUpScreen
