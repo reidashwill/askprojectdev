@@ -2,6 +2,7 @@ import React, {useState, useContext } from 'react';
 import {
   Text,
   View,
+  Button,
   StyleSheet,
   TouchableOpacity,
   TextInput,
@@ -9,8 +10,9 @@ import {
   Alert,
   Dimensions,
 } from "react-native";
-import {AuthContext } from '../../App';
-import * as firebase from 'firebase';
+// import {AuthContext } from '../../App';
+import * as firebase from '../../firebase';
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 // function SignUpScreen(){
 
@@ -20,7 +22,7 @@ import * as firebase from 'firebase';
 //     });
 
 function SignUpScreen() {
-  const { updateUser } = useContext(AuthContext);
+  // const { updateUser } = useContext(AuthContext);
   // const [ firstName, setFirstName] = useState("");
   // const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState(null);
