@@ -1,12 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { Text, View } from 'react-native';
+import React, { useState, useMemo, createContext } from 'react';
+import SignUpScreen from "./screens/auth/SignUpScreen";
+import firebase from './firebase';
 
-export default function App() {
+
+
+
+export default () => {
+  const auth = firebase.auth();
   return (
-    <View style={styles.container}>
-      <Text>Here we go!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+    <SignUpScreen/>
+    </>
   );
 }
