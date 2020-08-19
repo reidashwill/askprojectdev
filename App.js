@@ -9,7 +9,7 @@ import firebase from './firebase';
 export const AuthContext = createContext();
 
 export default () => {
-  
+
   const authContext = useMemo(() => {
   return {
     updateUser: () => {
@@ -19,7 +19,7 @@ export default () => {
 }, []);
 
   return (
-    <AuthContext.Provider >
+    <AuthContext.Provider value={authContext}>
       <SignUpScreen/>
     </AuthContext.Provider>
   );

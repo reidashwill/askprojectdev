@@ -9,10 +9,11 @@ import {
   Alert,
   Dimensions,
 } from "react-native";
-import firebase from '../../firebase';
+// import firebase from '../../firebase';
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-// import { AuthContext } from "../../App";
-
+import * as firebase from "firebase";
+import { AuthContext } from "../../App";
+const windowHeight = Dimensions.get('window').height;
 
 function SignUpScreen() {
   const [email, setEmail] = useState(null);
@@ -43,7 +44,7 @@ function SignUpScreen() {
     style={{
       flex: 1,
     }}>
-      <View>
+      <View style={styles.view}>
         <TextInput
           placeholder="Email"
           value={email}
@@ -72,6 +73,13 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: "black",
     fontSize: 15,
+  },
+  view: {
+    padding: 50,
+    alignItems: "center",
+    backgroundColor: "rgba(16,16,16,0.4)",
+    width: "100%",
+    height: windowHeight,
   }
 })
 
