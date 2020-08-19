@@ -1,7 +1,7 @@
 import React, { useState, useMemo, createContext } from 'react';
 import SignUpScreen from "./screens/auth/SignUpScreen";
 import firebase from './firebase';
-
+import EntryPoint from './navigationUtilities';
 
 
 
@@ -20,7 +20,7 @@ export default () => {
 
   return (
     <AuthContext.Provider value={authContext}>
-      <SignUpScreen/>
+      <EntryPoint/>
     </AuthContext.Provider>
   );
 }

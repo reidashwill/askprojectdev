@@ -54,20 +54,42 @@ function SignInScreen({ navigation }) {
     style={{
       flex: 1,
     }}>
-      <View>
+      <View style={styles.view}>
         <TextInput
           placeholder="Email"
           value={email}
           onChangeText={setEmail}
-          autoCapitalize={'none'}/>
+          autoCapitalize={'none'} style={styles.input}/>
         <TextInput
           placeholder="Password"
           value={password}
-          onChangetext={setPassword}/>
+          onChangetext={setPassword} style={styles.input}/>
         <Button title="Sign In">onPress={signIn}</Button>       
       </View>
     </KeyboardAwareScrollView>
   )
 }
+
+const styles = StyleSheet.create({
+  input: {
+    backgroundColor: "white",
+    height: 40,
+    borderColor: "#DDE2E4",
+    borderWidth: 2,
+    margin: 13,
+    width: 200,
+    alignItems: "center",
+    textAlign: "center",
+    color: "black",
+    fontSize: 15,
+  },
+  view: {
+    padding: 50,
+    alignItems: "center",
+    backgroundColor: "#790979",
+    width: "100%",
+    height: windowHeight,
+  }
+})
 
 export default SignInScreen
