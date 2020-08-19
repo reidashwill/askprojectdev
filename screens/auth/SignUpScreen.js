@@ -6,12 +6,11 @@ import {
   StyleSheet,
   TouchableOpacity,
   TextInput,
-  ImageBackground,
   Alert,
   Dimensions,
 } from "react-native";
 // import {AuthContext } from '../../App';
-import * as firebase from '../../firebase';
+import firebase from '../../firebase';
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 // function SignUpScreen(){
@@ -22,15 +21,14 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view
 //     });
 
 function SignUpScreen() {
-  // const { updateUser } = useContext(AuthContext);
-  // const [ firstName, setFirstName] = useState("");
-  // const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
   
+  
+  async function signUp(e) {
   try{
     
-    async function signUp(e) {
+    
       e.preventDefault();
 
       firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
@@ -39,11 +37,11 @@ function SignUpScreen() {
         var errorMessage = error.message;
         // ...
       });
-    }
+    
   } catch (error) {
     Alert.alert("Error: ", error.message)
   }
-
+}
   
 
   return(
@@ -61,7 +59,7 @@ function SignUpScreen() {
           placeholder="Password"
           value={password}
           onChangetext={setPassword}/>
-        <Button title="Sign In">onPress={signUp}</Button>       
+        <Button title="Sign up" onPress={signUp}/>  
       </View>
     </KeyboardAwareScrollView>
   )

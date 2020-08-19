@@ -1,6 +1,6 @@
 import React, { useState, useMemo, createContext } from 'react';
 import SignUpScreen from "./screens/auth/SignUpScreen";
-import * as firebase from 'firebase';
+import firebase from './firebase';
 
 
 
